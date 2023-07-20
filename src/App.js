@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React from 'react';
+import { Row, Col } from 'antd';
+import RoutesTable from './components/RoutesTable';
+import RoutesMap from './components/RoutesMap';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ height: '100vh', width: '100vw' }}>
+      <Row gutter={16}>
+        {/* Left Side White Component */}
+        <Col xs={24} md={8}>
+          <RoutesTable />
+        </Col>
+
+        {/* Right Side Map */}
+        <Col xs={24} md={16}>
+          <RoutesMap />
+        </Col>
+      </Row>
     </div>
   );
-}
+};
 
 export default App;
